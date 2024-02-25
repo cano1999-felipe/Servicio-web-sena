@@ -19,7 +19,7 @@ def registro():
 
         return jsonify({"message": "Usuario registrado correctamente"}), 201
     except Exception as e:
-        # Handle any unexpected exceptions
+        # Manejar cualquier excepción inesperada
         return jsonify({"error": "Error interno del servidor"}), 500
 
 @app.route("/login", methods=["POST"])
@@ -37,10 +37,10 @@ def login():
 
         return jsonify({"message": "Autenticación satisfactoria"}), 200
     except HTTPException as e:
-        # Handle specific HTTP exceptions (e.g., 400, 401)
+       # Manejar excepciones HTTP específicas (por ejemplo, 400, 401)
         return e
     except Exception as e:
-        # Handle any unexpected exceptions
+       # Manejar cualquier excepción inesperada
         return jsonify({"error": "Error interno del servidor"}), 500
 
 if __name__ == "__main__":
